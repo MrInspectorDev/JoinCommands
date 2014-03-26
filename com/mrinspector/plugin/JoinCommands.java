@@ -26,5 +26,12 @@ public class JoinCommands extends JavaPlugin implements Listener {
 		}
 	}
 	
+	@EventHandler
+	public void onLeaveCommand(PlayerQuitEvent e){
+		for(String s : this.getConfig().getStringList("leavecommands")) {
+			e.getPlayer().performCommand(s);
+		}
+	}
+	
 	
 }
