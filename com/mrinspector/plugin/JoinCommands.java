@@ -10,19 +10,15 @@ public class JoinCommands extends JavaPlugin implements Listener {
 
 	public void onEnable(){
 		Bukkit.getPluginManager().registerEvents(this, this);
-      getConfig().options().copyDefaults(true);
-	    saveConfig();
+                getConfig().options().copyDefaults(true);
+	        saveConfig();
 	    }
-	/*
-	 * joincommands:
-	 *   - drtshock
-	 *   - lol768
-	 */
-	
+
 	@EventHandler
 	public void onJoinCommand(PlayerJoinEvent e){
 		for(String s : this.getConfig().getStringList("joincommands")) {
 			e.getPlayer().performCommand(s);
+			//TODO: add console join commands
 		}
 	}
 	
@@ -30,8 +26,8 @@ public class JoinCommands extends JavaPlugin implements Listener {
 	public void onLeaveCommand(PlayerQuitEvent e){
 		for(String s : this.getConfig().getStringList("leavecommands")) {
 			e.getPlayer().performCommand(s);
+			//TODO: add console leave commands
 		}
 	}
-	
 	
 }
