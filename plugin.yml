@@ -1,0 +1,4 @@
+name: JoinCommands
+main: com.mrinspector.plugin.JoinCommands
+version: 1.0
+author: MrInspector
